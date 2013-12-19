@@ -1,0 +1,21 @@
+TEST,CSV,HEADER
+#test a comment :-)
+test,simple,record
+"test","quoted","record"
+test,"mixed","record"
+test,"multi
+lines",record
+test,\"escaped\",quote
+test2,"""escaped""",quote
+test,next record is,0 length
+""
+#An empty record won't be ignored if ignoreEmptyLines is true
+test,next record is,empty
+
+#An empty record will be ignored if ignoreEmptyLines is true
+  test  ,  record  ,  with trailing and leading white spaces  
+"  test  ","  record  ","  with quoted trailing and leading white spaces  "
+test,not "well formatted",record
+test,unbalanced ",double quote
+test,record with,"quoted, comma"
+,,
