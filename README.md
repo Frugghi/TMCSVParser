@@ -14,6 +14,26 @@ An Objective-C lightweight CSV parser.
 2. Copy `TMCSVParser.h` and `TMCSVParser.m` into your project
 3. Import the header `#import "TMCSVParser.h"`
 
+## How to use?
+
+```objc
+/* Create the parser */
+self.parser = [TMCSVParser parserWithFileAtPath:self.filePath encoding:NSUTF8StringEncoding];
+
+/* Set the delegate */
+[self.parser setDelegate:self];
+
+/* Configure the parser */
+[self.parser setHasHeader:YES];
+[self.parser setIgnoreEmptyLines:YES];
+[self.parser setTrimFieldWhitespaces:YES];
+
+/* Start it! */
+[self.parser parse];
+
+/* Wait for delegate calls */
+```
+
 ## License
 
 Copyright (c) 2013 Tommaso Madonia. All rights reserved.
